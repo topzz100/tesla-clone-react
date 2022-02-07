@@ -1,5 +1,5 @@
 import { Close } from '@mui/icons-material';
-import  React, { useState} from 'react';
+import  React, { useEffect, useState} from 'react';
 // import { useSelector } from 'react-redux';
 // import { SelectCars } from '../../features/car/carSlice';
 import { CenterMenu, CloseBtn, LogoImg, RightMenu, SideNav, Wrapper } from './Header.styles';
@@ -8,6 +8,10 @@ import { CenterMenu, CloseBtn, LogoImg, RightMenu, SideNav, Wrapper } from './He
 
 const Header = () => {
 const [sideNav, setSideNav] = useState(false)
+
+// useEffect(() => {
+//   setSideNav(false)
+// }, [])
   return <>
     <Wrapper>
       <LogoImg src='/images/logo.svg'/>

@@ -1,4 +1,3 @@
-import { Close } from "@mui/icons-material";
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
@@ -71,14 +70,27 @@ export const SideNav= styled.div`
   z-index: 9999;
   display: flex;
   flex-direction: column;
-  transform : ${props => props.showNav? 'translateX(100%)' : 'translateX(0)'};
+  transform : ${props => props.showNav? 'translateX(0)' : 'translateX(100%)'};
   transition: .3s linear;
+
   
   /* padding: 0 20px; */
   ul{
     height: 100%;
     width: 100%;
     padding: 0 20px;
+    overflow-y: scroll;
+  
+  ::-webkit-scrollbar{
+    width: 5px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+  ::-webkit-scrollbar-thumb {
+  background: #888;
+}
       li{
     list-style: none;
     font-size: .85rem;

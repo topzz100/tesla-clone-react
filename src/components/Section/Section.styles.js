@@ -14,6 +14,7 @@ export const Wrapper = styled.div`
   justify-content: space-between;
   background-image: ${props => `url("/images/${props.bgImage}")`};
   position: relative;
+  
   `;
 export const TextItem = styled.div`
   text-align: center;

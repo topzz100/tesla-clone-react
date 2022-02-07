@@ -1,10 +1,12 @@
 import React from 'react';
 import Header from '../Header/Header';
 import Section from '../Section/Section';
+import { Wrapper } from './Home.styles';
 
 const Home = () => {
-  return <div>
+  return <>
     <Header/>
+  <Wrapper>
     <Section
       show
       title = 'Model S'
@@ -56,8 +58,10 @@ const Home = () => {
       buttonRight= ''
       reveal
     />
+  </Wrapper>
     
-  </div>;
+    
+  </>;
 };
 
 export default Home;

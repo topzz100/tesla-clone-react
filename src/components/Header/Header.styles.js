@@ -1,3 +1,4 @@
+import { Close } from "@mui/icons-material";
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
@@ -12,6 +13,9 @@ export const Wrapper = styled.div`
   justify-content: space-between;
   padding: 0 40px;
   z-index: 99;
+  @media(max-width: 800px){
+    padding: 0 20px;
+  }
   
 `
 export const LogoImg = styled.img`
@@ -24,22 +28,37 @@ display: flex;
 align-items: center;
 justify-content: center;
 overflow: hidden;
+@media(max-width: 1050px){
   a{
+    display: none
+  }
+  .menu{
+    background-color: rgba(41, 40, 40, 0.1);
+    border-radius: 9px;
+  }
+    
+  }
+  a, h4{
     font-size: .85rem;
     padding: 6px 12px ;
     text-decoration: none;
     color: inherit;
     font-weight: 500;
     transition: .3s linear;
+    cursor: pointer;
     :hover{
       background-color: rgba(41, 40, 40, 0.1);
-      border-radius: 9px
+      border-radius: 9px;
     }
   }
   
 `;
 export const RightMenu= styled(CenterMenu)`
-
+  @media(max-width: 1000px){
+    a{
+      display: none;
+    }
+  }
 `;
 export const SideNav= styled.div`
   position: fixed;
@@ -49,19 +68,30 @@ export const SideNav= styled.div`
   height: 100vh;
   width: 300px;
   background-color: white;
-  Z-index: 9999;
+  z-index: 9999;
   display: flex;
   flex-direction: column;
-  padding: 0 20px;
-  a{
-    text-decoration: none;
-    color: inherit;
+  transform : ${props => props.showNav? 'translateX(100%)' : 'translateX(0)'};
+  transition: .3s linear;
+  
+  /* padding: 0 20px; */
+  ul{
+    height: 100%;
+    width: 100%;
+    padding: 0 20px;
+      li{
+    list-style: none;
     font-size: .85rem;
     padding: 10px 10px;
+    overflow: hidden;
+  } 
   }
-  span{
-    display: flex;
-    flex-direction: column
-  }
+ 
+ 
 
+  `;
+  export const CloseBtn = styled.div`
+    padding: 15px 25px 15px 20px;
+    text-align: right;
+    overflow: hidden;
   `;

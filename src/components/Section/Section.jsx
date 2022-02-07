@@ -1,22 +1,56 @@
 import React from 'react';
-import { ButtonGroup, ButtonLeft, ButtonRight, DownArrow, TextItem, Wrapper } from './Section.styles';
+import { Fade } from 'react-reveal';
+import { Button, ButtonGroup, ButtonLeft, ButtonRight, DownArrow, FooterLinks, TextItem, Wrapper } from './Section.styles';
 
-const Section = () => {
+const Section = ({ show, title, description, image, buttonLeft, buttonRight, reveal}) => {
   return <>
-    <Wrapper>
-      <TextItem>
-        <h1> Model S</h1>
-        <p>Order Online for Touchless Delivery</p>
-      </TextItem>
-      <ButtonGroup>
-        <ButtonLeft>
-          custom order
-        </ButtonLeft>
-        <ButtonRight>
-          existing inventory
-        </ButtonRight>
-        <DownArrow src='/images/down-arrow.svg'/>
-      </ButtonGroup>
+    <Wrapper bgImage = {image}>
+      <Fade bottom>
+        <TextItem>
+          <h1>{title}</h1>
+          <p>{description}</p>
+        </TextItem>
+      </Fade>
+      
+      <Fade bottom>
+        <ButtonGroup>
+          {
+            buttonRight? 
+            (
+              <Button>
+                <ButtonLeft>
+                  {buttonLeft}
+                </ButtonLeft>
+                <ButtonRight>
+                  {buttonRight}
+                </ButtonRight>
+              </Button>
+            ):
+            (
+              <Button>
+                <ButtonLeft>
+                  {buttonLeft}
+                </ButtonLeft>
+              </Button>
+            )
+          }
+         
+          
+         {show && <DownArrow src='/images/down-arrow.svg'/>} 
+         
+        </ButtonGroup>
+      </Fade>
+      {
+      reveal && 
+        <FooterLinks>
+          <a href="#">Tesla &#169; 2022</a>
+          <a href="#">Privacy & Legal</a>
+          <a href="#">Contact</a>
+          <a href="#">Career</a> 
+          <a href="#">News</a>
+          <a href="#">Engage</a>
+          <a href="#">Location</a>
+        </FooterLinks>}
 
     </Wrapper>
   </>;

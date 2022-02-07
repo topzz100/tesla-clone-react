@@ -5,7 +5,26 @@
 	box-sizing: border-box;
 	color: #393c41;
 	overflow-x: hidden;
+	scroll-behavior: ;
 }
 body {
 	width: 100%;
+}
+
+@keyframes animateDown {
+	0% {
+		transform: translateY(0);
+	}
+	40% {
+		transform: translateY(5px);
+	}
+	50% {
+		transform: translateY(0);
+	}
+	75% {
+		transform: translateY(3px);
+	}
+	100% {
+		transform: translateY(0);
+	}
 }
